@@ -30,9 +30,7 @@ namespace DesignPatterns.Observer.Concrete
 
         public void RemoveObserver(IObserver observer)
         {
-            var observerFound = observers.IndexOf(observer);
-            if (observerFound != 0)
-                observers.Remove(observer);
+            observers.Remove(observer);
         }
 
         public void NotifyObservers()
