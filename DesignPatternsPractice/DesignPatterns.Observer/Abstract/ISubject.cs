@@ -8,9 +8,9 @@ namespace DesignPatterns.Observer.Abstract
 {
     public interface ISubject
     {
-        void RegisterObserver();
+        void RegisterObserver(IObserver observer);
 
-        void RemoveObserver();
+        void RemoveObserver(IObserver observer);
 
         void NotifyObservers();
 
