@@ -8,6 +8,6 @@ namespace DesignPatterns.Observer.Abstract
 {
     public interface IObserver
     {
-        void Update();
+        void Update(float temp, float humidity, float pressure);
     }
 }

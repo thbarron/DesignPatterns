@@ -11,33 +11,33 @@ namespace DesignPatterns.Observer.Concrete
     public class WeatherData : ISubject
     {
 
-        private ArrayList observers;
+        private readonly ArrayList _observers;
         public float CurrentTemperature { get; set; }
         public float Humidity { get; set; }
         public float Pressure { get; set; }
 
-        public ArrayList Observers => observers;
+        public ArrayList Observers => _observers;
 
         public WeatherData()
         {
-            observers = new ArrayList();
+            _observers = new ArrayList();
         }
         
         public void RegisterObserver(IObserver observer)
         {
-            observers.Add(observer);
+            _observers.Add(observer);
         }
 
         public void RemoveObserver(IObserver observer)
         {
-            observers.Remove(observer);
+            _observers.Remove(observer);
         }
 
         public void NotifyObservers()
         {
-            foreach (IObserver observer in observers)
+            foreach (IObserver observer in _observers)
             {
-                observer.Update();
+                observer.Update(CurrentTemperature, Humidity, Pressure);
             }
         }
 
